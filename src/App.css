@@ -12,15 +12,42 @@ body {
 /** Main Content **/
 
 main {
-  max-width: 800px;
-  height: 400px;
   background-color: #dce1de;
+  max-width: 800px;
+  height: 500px;
   border-radius: 5px;
   padding: 20px;
-  margin: auto; 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 h1 {
   color: #216869;
   text-align: center;
+}
+
+  /* Dice Section */ 
+
+.dice-container {
+  display: grid;
+  grid-template: auto auto / repeat(5, 1fr);
+  gap: 20px;
+}
+
+.die-face {
+  background-color: #fff;
+  height: 50px;
+  width: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  border-radius: 5px;
+  box-shadow: 0 2px 2px rgb(0, 0, 0, 0.20);
+}
+
+.die-number {
+  font-size: 2rem;
 }
