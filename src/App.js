@@ -22,10 +22,12 @@ function App() {
     return newDice 
   }
 
-  // generate Die componenet 10x with state 
-  const diceElements = dice.map( die => <Die key={die.id} value={die.value} /> )
+  // generate Die Componenet 10x with state 
+  const diceElements = dice.map( die => (
+    <Die key={die.id} value={die.value} isHeld={die.isHeld} />
+  ))
 
-  // function - re-roll all dice 
+  // button function - re-roll all dice 
   function rollDice() {
     setDice(allNewDice()) 
   }
