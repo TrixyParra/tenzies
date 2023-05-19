@@ -19,6 +19,11 @@ function App() {
   // generate Die componenet 10x with state 
   const diceElements = dice.map( die => <Die value={die} /> )
 
+  // function - re-roll all dice 
+  function rollDice() {
+    setDice(allNewDice()) 
+  }
+
   return (
     <main>
       <h1>Tenzies</h1>
@@ -26,6 +31,13 @@ function App() {
       <div className="dice-container">
         {diceElements}
       </div>
+
+      <button 
+        className="roll-btn" 
+        onClick={rollDice}
+      >
+        Roll
+      </button>
       
     </main>
   );
