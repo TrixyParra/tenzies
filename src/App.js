@@ -5,19 +5,22 @@ import Die from './components/Die';
 function App() {
   const [dice, setDice] = useState(allNewDice())
 
-  // function - array of 10 random numbers
+  // function - array of objects: value of random number and isHeld
   function allNewDice() {
     const newDice = []
 
     for ( let i = 0; i < 10; i++ ) {
-      newDice.push( Math.ceil( Math.random() * 6 ))
+      newDice.push({ 
+        value: Math.ceil( Math.random() * 6 ), 
+        isHeld: false
+      })
     }
 
     return newDice 
   }
 
   // generate Die componenet 10x with state 
-  const diceElements = dice.map( die => <Die value={die} /> )
+  const diceElements = dice.map( die => <Die value={die.value} /> )
 
   // function - re-roll all dice 
   function rollDice() {
