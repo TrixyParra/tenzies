@@ -3,7 +3,7 @@
 } 
 
 body {
-  background-color: #183a37; 
+  background-color: #04151f;  
   padding: 20px;
   margin: 0;
 }
@@ -19,7 +19,7 @@ main {
   padding: 20px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
 }
 
@@ -51,3 +51,29 @@ h1 {
 .die-number {
   font-size: 2rem;
 }
+
+  /* Button Section */ 
+
+button {
+  background-color: #49a078;  
+  height: 50px;
+  width: 140px;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  font-weight: bold;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #03cea4;
+}
+
+button:focus {
+  outline: none;
+}
+
+button:active {
+  box-shadow: inset 3px 3px 10px -3px rgba(0, 0, 0, 0.5);
+} 
