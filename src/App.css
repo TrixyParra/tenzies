@@ -21,6 +21,7 @@ main {
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
+  margin: auto;
 }
 
 h1 {
@@ -37,7 +38,6 @@ h1 {
 }
 
 .die-face {
-  background-color: #fff;
   height: 50px;
   width: 50px;
   display: flex;
