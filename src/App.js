@@ -8,7 +8,7 @@ function App() {
   const [dice, setDice] = useState(allNewDice())
   const [tenzies, setTenzies] = useState(false) 
 
-  // useEffect - runs every time the dice array changes - if isHeld and and all dice values are the same then game won 
+  // useEffect - runs every time the dice array changes - if isHeld is true and all dice values are the same then game won 
   useEffect(() => {
     const allHeld = dice.every(die => die.isHeld) // .every() - checks if every item in array is true - in this case, isHeld 
     const firstValue = dice[0].value 
@@ -80,7 +80,7 @@ function App() {
         className="roll-btn" 
         onClick={rollDice}
       >
-        Roll
+        {tenzies ? "New Game" : "Roll"}
       </button>
       
     </main>
