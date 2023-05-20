@@ -27,6 +27,14 @@ main {
 h1 {
   color: #216869;
   text-align: center;
+  font-size: 50px;
+  margin: 0;
+}
+
+.game-instructions {
+  text-align: center;
+  font-size: 18px;
+  margin-top: 0;
 }
 
   /* Dice Section */ 
