@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { nanoid } from 'nanoid';
 import './App.css';
 import Die from './components/Die';
@@ -6,6 +6,20 @@ import Die from './components/Die';
 
 function App() {
   const [dice, setDice] = useState(allNewDice())
+  const [tenzies, setTenzies] = useState(false) 
+
+  // useEffect - runs every time the dice array changes - if isHeld and and all dice values are the same then game won 
+  useEffect(() => {
+    const allHeld = dice.every(die => die.isHeld) // .every() - checks if every item in array is true - in this case, isHeld 
+    const firstValue = dice[0].value 
+    const allSameValue = dice.every(die => die.value === firstValue)
+
+    if (allHeld && allSameValue) {
+      setTenzies(true) 
+      console.log("Game Won!")
+    }
+
+  }, [dice]) 
 
   // function - returns object: value of random number, isHeld, and id (reusable) 
   function generateNewDie() { 
