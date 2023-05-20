@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { nanoid } from 'nanoid';
 import './App.css';
 import Die from './components/Die';
+import Confetti from 'react-confetti'
 
 
 function App() {
@@ -66,6 +67,8 @@ function App() {
 
   return (
     <main>
+      { tenzies && <Confetti /> }
+
       <h1>Tenzies</h1>
 
       <p className="game-instructions">
