@@ -47,13 +47,18 @@ function App() {
     <Die key={die.id} value={die.value} isHeld={die.isHeld} holdDice={() => holdDice(die.id)} />
   ))
 
-  // button function - re-roll all dice except for dice that are being held
+  // button function - re-roll all dice except for dice that are being held and then start new game when game is finished/won 
   function rollDice() {
-    setDice(oldDice => oldDice.map(die => {
-      return die.isHeld ? 
-        die : 
-        generateNewDie() 
-    })) 
+    if (!tenzies) {
+      setDice(oldDice => oldDice.map(die => {
+        return die.isHeld ? 
+          die : 
+          generateNewDie() 
+      }))
+    } else { 
+      setDice(allNewDice())
+      setTenzies(false) 
+    }
   }
 
   // function - embedding the id parameter whenever the die is clicked it changes isHeld to the opposite of what it was when ids are equal to each other 
