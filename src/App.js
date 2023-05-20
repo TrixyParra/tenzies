@@ -18,18 +18,28 @@ function App() {
         id: nanoid()
       })
     }
-    console.log(newDice)
+    
     return newDice 
   }
 
   // generate Die Componenet 10x with state 
   const diceElements = dice.map( die => (
-    <Die key={die.id} value={die.value} isHeld={die.isHeld} />
+    <Die key={die.id} value={die.value} isHeld={die.isHeld} holdDice={() => holdDice(die.id)} />
   ))
 
   // button function - re-roll all dice 
   function rollDice() {
     setDice(allNewDice()) 
+  }
+
+  // function - embedding the id parameter whenever the die is clicked change isHeld to the opposite of what it is 
+  function holdDice(id) {
+    // console.log(id)
+    setDice(oldDice => oldDice.map(die => {
+      return die.id === id ? 
+        {...die, isHeld: !die.isHeld} : 
+        die
+    }))
   }
 
   return (
